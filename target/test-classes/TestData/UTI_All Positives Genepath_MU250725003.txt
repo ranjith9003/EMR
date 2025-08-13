@@ -1,0 +1,89 @@
+    * Barcode = 																																
+    * Block Type = 384-Well Block																																
+    * Calibration Background is expired  = No																																
+    * Calibration Background performed on = 01-27-2025																																
+    * Calibration Pure Dye 27_CY5 is expired = No																																
+    * Calibration Pure Dye 27_CY5 performed on = 01-27-2025																																
+    * Calibration Pure Dye 27_CY5_5 is expired = No																																
+    * Calibration Pure Dye 27_CY5_5 performed on = 01-27-2025																																
+    * Calibration Pure Dye 27_FAM is expired = No																																
+    * Calibration Pure Dye 27_FAM performed on = 01-27-2025																																
+    * Calibration Pure Dye 27_HEX is expired = No																																
+    * Calibration Pure Dye 27_HEX performed on = 01-27-2025																																
+    * Calibration Pure Dye 27_TXRED is expired = No																																
+    * Calibration Pure Dye 27_TXRED performed on = 01-27-2025																																
+    * Calibration RNaseP is expired  = Yes																																
+    * Calibration RNaseP performed on = 11-23-2020																																
+    * Calibration ROI is expired  = No																																
+    * Calibration ROI performed on = 01-26-2025																																
+    * Calibration Uniformity is expired  = No																																
+    * Calibration Uniformity performed on = 04-15-2024																																
+    * Chemistry = TAQMAN																																
+    * Comment = NA																																
+    * Date Created = 04-12-2025 15:08:20 PM EDT																																
+    * Date Modified = 05-07-2025 16:02:11 PM EDT																																
+    * Experiment File Name = D:\Users\INSTR-ADMIN\Desktop\GENEPATH 2.14.2025 RESULTFILE\STABILITY ROOM TEMP\DAY 3\2025-04-12 -2 150820.eds																																
+    * Experiment Name = 2025-04-12 150820																																
+    * Experiment Run Start Time = 04-12-2025 15:57:21 PM EDT																																
+    * Experiment Run Stop Time = 04-12-2025 16:59:35 PM EDT																																
+    * Experiment Type = Standard Curve																																
+    * Instrument Name = 285881969																																
+    * Instrument Serial Number = 285881969																																
+    * Instrument Type = QuantStudio 12K Flex																																
+    * Passive Reference = 																																
+    * Quantification Cycle Method = Ct																																
+    * Signal Smoothing On = true																																
+    * Stage/ Cycle where Analysis is performed = Stage 3, Step 2																																
+    * User Name = NA																																
+                                                                                                                                    
+    [Results]																																
+    Well	Well Position	Omit	Sample Name	Target Name	Task	Reporter	Quencher	CT	Ct Mean	Ct SD	Quantity	Quantity Mean	Quantity SD	Automatic Ct Threshold	Ct Threshold	Automatic Baseline	Baseline Start	Baseline End	Comments	Y-Intercept	R(superscript 2)	Slope	Amp Score	Cq Conf	Amp Status	EXPFAIL	NOISE	HIGHSD	SPIKE	CTFAIL	THOLDFAIL	OFFSCALE
+1	A1	FALSE	MU250725003	Acinetobacter baumannii	UNKNOWN	27_FAM	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	Y	N
+1	A1	FALSE	MU250725003	Candida tropicalis	UNKNOWN	27_HEX	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	Y	N
+1	A1	FALSE	MU250725003	Enterobacter cloacae	UNKNOWN	27_CY5	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	Y	N
+1	A1	FALSE	MU250725003	HEC	UNKNOWN	27_CY5_5	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	Y	N
+1	A1	FALSE	MU250725003	Pseudomonas aeruginosa	UNKNOWN	27_TXRED	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	Y	N
+25	B1	FALSE	MU250725003	Candida albicans	UNKNOWN	27_TXRED	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	Y	N
+25	B1	FALSE	MU250725003	Candida glabrata	UNKNOWN	27_FAM	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	Y	N
+25	B1	FALSE	MU250725003	Klebsiella oxytoca	UNKNOWN	27_HEX	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	Y	N
+25	B1	FALSE	MU250725003	Proteus mirabilis	UNKNOWN	27_CY5	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	Y	N
+49	C1	FALSE	MU250725003	Candida parapsilosis	UNKNOWN	27_FAM	None	23.1	23.1					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	N	N
+49	C1	FALSE	MU250725003	Morganella morganii	UNKNOWN	27_TXRED	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	N	N
+49	C1	FALSE	MU250725003	Serratia marcescens_Stenotrophomonas maltophilia	UNKNOWN	27_HEX	None	22.6	22.6					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	N	N
+49	C1	FALSE	MU250725003	Streptococcus pyogenes	UNKNOWN	27_CY5	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	N	N
+73	D1	FALSE	MU250725003	Enterococcus faecalis_Enterococcus faecium	UNKNOWN	27_HEX	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	N	N	N	Y	N	N	N
+73	D1	FALSE	MU250725003	Escherichia coli	UNKNOWN	27_TXRED	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	N	N	N	Y	N	N	N
+73	D1	FALSE	MU250725003	Klebsiella pneumoniae	UNKNOWN	27_FAM	None	25.1	25.1					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	N	N	N	Y	N	N	N
+73	D1	FALSE	MU250725003	Staphylococcus aureus	UNKNOWN	27_CY5	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	N	N	N	Y	N	N	N
+97	E1	FALSE	MU250725003	HSV1	UNKNOWN	27_FAM	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	N	N
+97	E1	FALSE	MU250725003	HSV2	UNKNOWN	27_HEX	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	N	N
+97	E1	FALSE	MU250725003	Mycoplasma genitalium	UNKNOWN	27_TXRED	None	25.1	25.1					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	N	N
+97	E1	FALSE	MU250725003	Treponema pallidum	UNKNOWN	27_CY5	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	N	N
+121	F1	FALSE	MU250725003	Citrobacter freundii_Citrobacter koseri	UNKNOWN	27_CY5	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	N	N	N	Y	N	N	N
+121	F1	FALSE	MU250725003	Pichia kudriavzevii_Candida krusei	UNKNOWN	27_FAM	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	N	N	N	Y	N	N	N
+121	F1	FALSE	MU250725003	Staphylococcus epidermidis	UNKNOWN	27_HEX	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	N	N	N	Y	N	N	N
+121	F1	FALSE	MU250725003	Streptococcus agalactiae	UNKNOWN	27_TXRED	None	23.1	23.1					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	N	N	N	Y	N	N	N
+145	G1	FALSE	MU250725003	Chlamydia trachomatis	UNKNOWN	27_FAM	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	N	N
+145	G1	FALSE	MU250725003	Empty1	UNKNOWN	27_TXRED	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	N	N
+145	G1	FALSE	MU250725003	Neisseria gonorrhea	UNKNOWN	27_HEX	None	26.1	26.1					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	N	N
+145	G1	FALSE	MU250725003	Trichomonas vaginalis	UNKNOWN	27_CY5	None	25.1	25.1					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	N	N
+169	H1	FALSE	MU250725003	Empty2	UNKNOWN	27_HEX	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	Y	N
+169	H1	FALSE	MU250725003	Gardnerella vaginalis	UNKNOWN	27_CY5	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	Y	N
+169	H1	FALSE	MU250725003	SIC	UNKNOWN	27_TXRED	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	Y	N
+169	H1	FALSE	MU250725003	Ureaplasma urealyticum	UNKNOWN	27_FAM	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	Y	N
+193	I1	FALSE	MU250725003	CTX-M	UNKNOWN	27_FAM	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	N	N	N	Y	N	N	N
+193	I1	FALSE	MU250725003	KPC	UNKNOWN	27_CY5	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	N	N	N	Y	N	N	N
+193	I1	FALSE	MU250725003	NDM	UNKNOWN	27_TXRED	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	N	N	N	Y	N	N	N
+193	I1	FALSE	MU250725003	OXA-23	UNKNOWN	27_HEX	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	N	N	N	Y	N	N	N
+217	J1	FALSE	MU250725003	AmpC	UNKNOWN	27_FAM	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	N	N
+217	J1	FALSE	MU250725003	Empty3	UNKNOWN	27_CY5	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	N	N
+217	J1	FALSE	MU250725003	MecA	UNKNOWN	27_TXRED	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	N	N
+217	J1	FALSE	MU250725003	OXA-48	UNKNOWN	27_HEX	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	N	N
+241	K1	FALSE	MU250725003	Empty4	UNKNOWN	27_TXRED	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	Y	N
+241	K1	FALSE	MU250725003	ErmA_B_C	UNKNOWN	27_FAM	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	Y	N
+241	K1	FALSE	MU250725003	MCR-1	UNKNOWN	27_CY5	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	Y	N
+241	K1	FALSE	MU250725003	QnrA	UNKNOWN	27_HEX	None	28	28					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	Y	N
+265	L1	FALSE	MU250725003	QnrB	UNKNOWN	27_HEX	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	N	N
+265	L1	FALSE	MU250725003	TetM	UNKNOWN	27_CY5	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	N	N
+265	L1	FALSE	MU250725003	VIM	UNKNOWN	27_TXRED	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	N	N
+265	L1	FALSE	MU250725003	VanA_B_C	UNKNOWN	27_FAM	None	22.822	22.822					TRUE	340.489	TRUE	3	18					1.868	0.937	Amp	Y	N	N	Y	N	N	N
