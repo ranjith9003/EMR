@@ -1,8 +1,8 @@
-@allRows  
+@smoke
 Feature: Case creation functionality with mandatory fields
 
- @case 
- Scenario: case Creation with Uti Without Std - Atila
+  @case
+  Scenario: case Creation with Uti Without Std - Atila
     Given the user is on the login page of DLW
     When the user enters username
     And the user enters password
@@ -18,7 +18,6 @@ Feature: Case creation functionality with mandatory fields
     And the user enters zip code
     Then the patient should be registered successfully
     When the user selects the UTI case type for cases
-    
     And the user enters the  collection date
     And the user enters the  received date
     And the user selects the ordering facility
@@ -37,16 +36,4 @@ Feature: Case creation functionality with mandatory fields
     And the new case information should be saved successfully
     And check if the case is already created and proceed
     And click on convert to  case
-		And get the accession Id from the created case
-		
-		#API Validation
-#		Given the user has successfully created a case via UI and captured the accession ID
-    #When the user sends a GET request with that accession ID to fetch order details
-    #Then the API response should have status code 200
-    #And the API should return the same accession ID as submitted
-    #And the API should return correct patient information 
-    #And the API should return correct order metadata including case type, facility, physician 
-    #And the API should return the correct collection date
-    #And the API should return the correct collection date
-    #And the API should return the correct received date
-    
+    And get the accession Id from the created case

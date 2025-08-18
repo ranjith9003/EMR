@@ -40,11 +40,13 @@ public void the_user_searches_and_selects_the_required_test_of_urinalysis_with_s
 	BaseClass.waitAndClick(LocatorsPage.add_test_button_new, 10);
 }
 @When("the user searches and selects the required test of urinalysis")
-public void the_user_searches_and_selects_the_required_test_of_urinalysis() {
+public void the_user_searches_and_selects_the_required_test_of_urinalysis() throws Throwable{
 	BaseClass.waitAndClick(LocatorsPage.add_test, 10);
 	BaseClass.waitAndClick(LocatorsPage.select_panels, 10);
-	BaseClass.waitAndClick(LocatorsPage.Urinalysis, 10);
-	BaseClass.waitAndClick(LocatorsPage.add_test_button_new, 10);
+	Thread.sleep(2000);
+	BaseClass.waitAndClickWithJSFallback(LocatorsPage.Urinalysis, 10);
+	Thread.sleep(2000);
+	BaseClass.waitAndClickWithJSFallback(LocatorsPage.add_test_button_new, 10);
 
 	
 }

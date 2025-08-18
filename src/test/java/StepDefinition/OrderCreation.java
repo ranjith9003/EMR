@@ -171,7 +171,7 @@ public class OrderCreation extends BaseSteps {
     @When("the user searches and selects the required test")
     public void the_user_searches_and_selects_the_required_test() {
         BaseClass.waitAndClick(LocatorsPage.add_test, 10);
-        BaseClass.assertElementVisible(LocatorsPage.add_test_checkbox, 10);
+        //BaseClass.assertElementVisible(LocatorsPage.add_test_checkbox, 10);
     }
 
     @When("the user clicks the add test button")

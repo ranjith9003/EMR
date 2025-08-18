@@ -1,3 +1,4 @@
+@smoke
 Feature: Order creation functionality with mandatory fields
 
   @covidflu @CovidFluvalidations

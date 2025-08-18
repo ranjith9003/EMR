@@ -67,9 +67,10 @@ if (accessionID == null) throw new IllegalStateException("accessionID is missing
 public void the_user_uploads_the_uti_report_file() throws Throwable {
 	 Thread.sleep(3000);
      BaseClass.waitAndClickWithJSFallback(LocatorsPage.select_case_type, 10);
+     Thread.sleep(3000);
      BaseClass.waitAndClickWithJSFallback(LocatorsPage.file_UTI, 10);
-    // BaseClass.waitAndClickWithJSFallback(LocatorsPage.ATILA_UTI_input, 10);
-    // BaseClass.waitAndClickWithJSFallback(LocatorsPage.ATILA_UTI_click, 10);
+     BaseClass.waitAndClickWithJSFallback(LocatorsPage.result_type, 10);
+     BaseClass.waitAndClickWithJSFallback(LocatorsPage.UTI, 10);
 
      BaseClass.waitAndClick(LocatorsPage.upload_click, 10); // Triggers OS dialog
 

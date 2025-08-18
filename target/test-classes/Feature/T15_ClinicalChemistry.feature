@@ -1,6 +1,7 @@
+@smoke
 Feature: Clinical Chemistry casetype End to End flow
 
-  @ClinicalChemistry @order
+   @clinicalChemistry @order
   Scenario: Order Creation
     Given the user is on the login page
     When the user enters username
@@ -24,8 +25,17 @@ Feature: Clinical Chemistry casetype End to End flow
     And the user enters the ICD-10 code
     And the user selects the specimen types
     And the user enters the collection date and time
+    And the user selects the fasting 
     Then the case information should be saved successfully
     When the user searches and selects the required test
+    When user selects the following tests:
+      | Albumin   |
+      | Glucose   |
+      | Bilirubin |
+    Then the selected tests should be marked as checked
+      | Albumin   |
+      | Glucose   |
+      | Bilirubin |
     And the user clicks the add test button for covidflu
     When the user opens the patient signature section
     And the user uploads or draws the patient signature

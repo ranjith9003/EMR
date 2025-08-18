@@ -30,6 +30,9 @@ import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.ui.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.cucumber.datatable.DataTable;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class BaseClass {
@@ -318,6 +321,66 @@ public static void waitAndClick(WebElement element, int timeoutInSeconds) {
         element.clear();
         element.sendKeys(text);
     }
+    public static void selectTests(List<String> testNames) {
+        for (String testName : testNames) {
+            try {
+                // Dynamic XPath based on label text
+                String xpath = "//label[.//span[normalize-space(text())='" + testName + "']]"
+                             + "//input[@type='checkbox' and not(@disabled)]";
+
+                // Use BaseClass driver
+                List<WebElement> elements = BaseClass.driver.findElements(By.xpath(xpath));
+
+                if (elements.isEmpty()) {
+                    System.out.println("❌ Test not found in UI: " + testName);
+                    continue;
+                }
+
+                // Pick only the displayed element (avoid duplicates like 1 of 11)
+                WebElement checkbox = elements.stream()
+                                              .filter(WebElement::isDisplayed)
+                                              .findFirst()
+                                              .orElse(null);
+
+                if (checkbox == null) {
+                    System.out.println("❌ No visible checkbox found for: " + testName);
+                    continue;
+                }
+
+                // Click if not already selected
+                if (!checkbox.isSelected()) {
+                    BaseClass.waitAndClick(checkbox, 5); // ✅ reuse waitAndClick
+                    System.out.println("✔ Selected: " + testName);
+                } else {
+                    System.out.println("ℹ Already selected: " + testName);
+                }
+
+            } catch (Exception e) {
+                System.err.println("⚠ Failed to select test: " + testName + " | " + e.getMessage());
+            }
+        }
+    }
+    public static void waitUntilPageReady(WebElement keyElement, int timeoutInSeconds) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+
+        try {
+            // 1️⃣ Wait for document.readyState = complete
+            wait.until(webDriver -> 
+                ((JavascriptExecutor) webDriver)
+                    .executeScript("return document.readyState").equals("complete")
+            );
+
+            // 2️⃣ Wait for key element to be visible (ensures UI content is ready)
+            wait.until(ExpectedConditions.visibilityOf(keyElement));
+
+            System.out.println("✅ Page is fully loaded and key element is visible: " + keyElement.toString());
+        } catch (Exception e) {
+            System.err.println("❌ Timeout waiting for page and element: " + keyElement.toString());
+            throw e;
+        }
+    }
+
+
     public static void waitAndClickWithRetries(WebElement element, int timeoutInSeconds, int maxRetries) {
         int attempts = 0;
         while (attempts < maxRetries) {

@@ -19,7 +19,7 @@ import io.cucumber.junit.CucumberOptions;
     },
     monochrome = true,                             // Cleaner console output
     dryRun = false,                                // Set to true to check step mappings without running
-    tags = "@covid"                                // Tags to filter scenarios to run
+    tags = "@clinicalChemistry"                                // Tags to filter scenarios to run
 )
 
 public class Runner {

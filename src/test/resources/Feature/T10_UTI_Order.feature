@@ -1,6 +1,7 @@
+@smoke
 Feature: Order creation functionality with mandatory fields
 
-  @UTIv 
+   @UTIv 
   Scenario: Order Creation with Uti Without STI
     Given the user is on the login page of DLW
     When the user enters username
@@ -37,7 +38,7 @@ Feature: Order creation functionality with mandatory fields
     And check if the case is already created and proceed
     And get the accession Id from the created case
 
-  @UTIv 
+   @UTIv 
   Scenario: case Creation with Uti With STI
     Given the user is on the login page of DLW
     When the user enters username
@@ -74,7 +75,7 @@ Feature: Order creation functionality with mandatory fields
     And check if the case is already created and proceed
     And get the accession Id from the created case
 
-  @UTIv 
+   @UTIv 
   Scenario: case Creation with Uti Basic panel
     Given the user is on the login page of DLW
     When the user enters username

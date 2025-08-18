@@ -63,8 +63,7 @@ public class Locators {
     public WebElement save_urinalysis;
     @FindBy(xpath = "//span[text()='Urinalysis reflex to UTI with STD']")
     public WebElement Urinalysis_reflex_to_UTI_with_STD;
-    
-    @FindBy(xpath = "//span[text()='Urinalysis']")
+    @FindBy(xpath = "//li[@class='el-select-dropdown__item']//span[text()='Urinalysis']")
     public WebElement Urinalysis;
     @FindBy(xpath = "//span[text()='GENERATE REPORT']")
     public WebElement generate_report_urinalysis;
@@ -83,10 +82,17 @@ public class Locators {
 
     @FindBy(xpath = "//span[text()='MALE']")
     public WebElement gender_input;
-
+  //div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[13]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]
     @FindBy(xpath = "//input[@placeholder='MM']")
     public WebElement dob_mm_input;
 
+    @FindBy(xpath = "//div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[13]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]")
+    public WebElement fasting_Dropdown;
+    
+    
+    @FindBy(xpath = "//li[@class='el-select-dropdown__item']//span[text()='Yes']")
+    public WebElement fasting_option;
+    
     @FindBy(xpath = "//input[@placeholder='DD']")
     public WebElement dob_dd_input;
 
@@ -96,6 +102,12 @@ public class Locators {
     @FindBy(xpath = "//input[@placeholder='Enter Mobile Number']")
     public WebElement mobile_number_input;
 
+    @FindBy(xpath = "//input[@placeholder='UTI']")
+    public WebElement result_UTI;
+    
+    @FindBy(xpath = "//li[@class='el-select-dropdown__item hover']//span[text()='UTI']")
+    public WebElement UTI;
+    
     @FindBy(xpath = "//input[@placeholder='Enter Address Line 1s']")
     public WebElement address_line_1_input;
     @FindBy(xpath = "//input[@placeholder='Enter Address Line 1']")
@@ -133,7 +145,7 @@ public class Locators {
     @FindBy(xpath = "(//input[@class='el-input__inner' and contains(@placeholder, 'MM-DD-YYYY HH:MM AM')])[1]")
     public WebElement collection_date_input;
 
-    @FindBy(xpath = "//div[1]/div[2]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/input[1]")
+    @FindBy(xpath = "//div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/input[1]")
     public WebElement received_date_input;
 
     @FindBy(xpath = "//body")
@@ -167,7 +179,7 @@ public class Locators {
   //input[@placeholder="ATILA UTI"]
     @FindBy(xpath = "//span[text()='GENEPATH UTI']")
     public WebElement Genepath_UTI_input;
-    @FindBy(xpath = "//div[1]/div[2]/div[1]/form[1]/div[1]/div[9]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]")
+    @FindBy(xpath = "//div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[12]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]")
     public WebElement icd_code_select;
     @FindBy(xpath = "//span[text()='COVID 19']")
     public WebElement covid_text;

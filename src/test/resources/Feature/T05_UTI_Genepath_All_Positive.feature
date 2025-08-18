@@ -1,3 +1,4 @@
+@smoke
 Feature: Order Creation with Uti positive value
 
  @UTIorder   

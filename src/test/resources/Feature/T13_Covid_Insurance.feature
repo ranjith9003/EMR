@@ -1,4 +1,4 @@
-@order
+@smoke
 Feature: Order creation functionality with different insurance
 
   @nonmandatory @order

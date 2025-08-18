@@ -1,4 +1,4 @@
- 
+ @smoke
 Feature: Covid flu casetype End to End flow
 @Flu @covidflu
   Scenario: Order Creation

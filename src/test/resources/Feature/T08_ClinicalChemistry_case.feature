@@ -1,6 +1,6 @@
-Feature: Case creation functionality with mandatory fields
-
-   
+@smoke
+Feature: Case creation functionality with mandatory field
+ @case
   Scenario: Clinical chemistry case Creation
     Given the user is on the login page of DLW
     When the user enters username
@@ -26,8 +26,15 @@ Feature: Case creation functionality with mandatory fields
     And the user selects the specimen types
     And the user enters the collection date and time
     Then the case information should be saved successfully
-    When the user searches and selects the required test for clinical chemistry
-    Then validating all the test names are present or not
+     When the user searches and selects the required test for clinical chemistry
+    When user selects the following tests:
+      | Albumin   |
+      | Glucose   |
+      | Bilirubin |
+    Then the selected tests should be marked as checked
+      | Albumin   |
+      | Glucose   |
+      | Bilirubin |
     When the user clicks the add test button in clinical chemistry
     When the user selects the relationship
     And the user enters insurance name

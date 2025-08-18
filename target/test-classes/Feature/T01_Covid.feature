@@ -1,4 +1,4 @@
- @order
+ @smoke @order
 Feature: Order creation functionality with mandatory fields
  @covid @order 
   Scenario: Order Creation
