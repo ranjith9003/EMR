@@ -1,7 +1,7 @@
-@smoke
+@allRows @smoke
 Feature: Case creation functionality with mandatory fields
 
-  @case
+  @allRows  
   Scenario: case Creation with Uti Without Std - Atila
     Given the user is on the login page of DLW
     When the user enters username

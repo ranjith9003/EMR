@@ -611,6 +611,74 @@ public static String getTextSafe(WebElement element, int timeoutInSeconds, int m
     throw new AssertionError("❌ Failed to fetch non-empty text from element after " + maxRetries + " attempts.");
 }
 
+//Utility wait for loader
+public static void waitForLoaderToDisappear(WebDriver driver, WebDriverWait wait) {
+ try {
+     wait.until(ExpectedConditions.invisibilityOfElementLocated(
+         By.xpath("//div[contains(@class,'el-loading-mask')]")
+     ));
+ } catch (TimeoutException e) {
+     System.out.println("⚠️ Loader still visible after timeout, continuing...");
+ }
+}
+
+public static String toTitleCase(String input) {
+    if (input == null || input.trim().isEmpty()) {
+        return input;
+    }
+
+    // Split by spaces
+    String[] words = input.trim().split("\\s+");
+
+    // If only one word → return as-is (no modification)
+    if (words.length == 1) {
+        return input;
+    }
+
+    // If multiple words → apply InitCap
+    StringBuilder titleCase = new StringBuilder();
+    for (String word : words) {
+        if (word.length() > 0) {
+            titleCase.append(Character.toUpperCase(word.charAt(0)))
+                     .append(word.substring(1).toLowerCase())
+                     .append(" ");
+        }
+    }
+
+    return titleCase.toString().trim();
+}
+public static void safeClick(WebElement element) {
+    try {
+        // Explicit wait for element to be clickable
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+
+        // Try clicking
+        element.click();
+        System.out.println("✅ Clicked successfully on: " + element);
+
+    } catch (ElementClickInterceptedException e) {
+        // Retry with JS if intercepted
+        System.out.println("⚠️ ElementClickInterceptedException, trying with JS Click...");
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+
+    } catch (StaleElementReferenceException e) {
+        // Re-find and retry if stale
+        System.out.println("⚠️ StaleElementReferenceException, retrying...");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebElement refreshedElement = wait.until(ExpectedConditions.refreshed(ExpectedConditions.elementToBeClickable(element)));
+        refreshedElement.click();
+
+    } catch (TimeoutException e) {
+        System.out.println("❌ Timeout waiting for element to be clickable: " + element);
+
+    } catch (Exception e) {
+        System.out.println("❌ Unexpected exception during safeClick: " + e.getMessage());
+        throw e; // rethrow if unexpected
+    }
+}
+
+
     public static String getText(WebElement element, int timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
         wait.until(ExpectedConditions.visibilityOf(element));
@@ -785,6 +853,40 @@ public static String getTextSafe(WebElement element, int timeoutInSeconds, int m
     public static void waitForPageLoadComplete(Duration timeout) { // Driver param removed
         new WebDriverWait(driver, timeout).until(
             webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
+    }
+    public static String waitForNewId(WebElement element, Duration timeout) {
+        WebDriverWait wait = new WebDriverWait(driver, timeout);
+
+        // capture old value
+        String oldText = element.getText();
+
+        // wait until text is NOT equal to old one
+        wait.until(ExpectedConditions.not(
+            ExpectedConditions.textToBePresentInElement(element, oldText)
+        ));
+
+        return element.getText();
+    }
+    public static boolean isClickable(WebDriver driver, WebElement element, int seconds) {
+        try {
+            WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+            shortWait.until(ExpectedConditions.elementToBeClickable(element));
+            return true;
+        } catch (TimeoutException e) {
+            return false;
+        }
+    }
+
+    public static String waitForOrderId(WebElement element, Duration timeout) {
+        WebDriverWait wait = new WebDriverWait(driver, timeout);
+
+        return wait.until(driver -> {
+            String text = element.getText().trim();
+            if (text != null && !text.isEmpty() && text.matches("[A-Za-z0-9]+")) {
+                return text;
+            }
+            return null; // keep waiting
+        });
     }
 
     public static void acceptAlert() { // Driver param removed
@@ -1184,6 +1286,42 @@ public static String getTextSafe(WebElement element, int timeoutInSeconds, int m
         } catch (TimeoutException e) {
             throw new AssertionError("❌ Element NOT visible within " + timeoutInSeconds + " seconds: " + element.toString());
         }
+    }
+    public static void waitUntilSelected(WebElement element, int timeoutInSeconds) {
+        new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds))
+            .until(ExpectedConditions.elementToBeSelected(element));
+    }
+    public static WebElement scrollToElement(WebElement element, String elementName) throws Throwable{
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        int maxScrollAttempts = 5;
+
+        // Try scrolling down
+        for (int i = 0; i < maxScrollAttempts; i++) {
+            try {
+                if (element.isDisplayed()) {
+                    js.executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
+                    return element;
+                }
+            } catch (StaleElementReferenceException | NoSuchElementException ignored) {}
+
+            js.executeScript("window.scrollBy(0, 300);");
+            Thread.sleep(500);
+        }
+
+        // Try scrolling up
+        for (int i = 0; i < maxScrollAttempts; i++) {
+            try {
+                if (element.isDisplayed()) {
+                    js.executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
+                    return element;
+                }
+            } catch (StaleElementReferenceException | NoSuchElementException ignored) {}
+
+            js.executeScript("window.scrollBy(0, -300);");
+            Thread.sleep(500);
+        }
+
+        throw new AssertionError("❌ Element not visible even after scrolling: " + elementName);
     }
 
     // Assert that a specific text is present in the page source within timeout

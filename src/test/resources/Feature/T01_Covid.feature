@@ -1,6 +1,7 @@
- @smoke @order
+@smoke @order
 Feature: Order creation functionality with mandatory fields
- @covid @order 
+
+  @covid @order
   Scenario: Order Creation
     Given the user is on the login page
     When the user enters username
@@ -35,9 +36,9 @@ Feature: Order creation functionality with mandatory fields
     And the billing case information should be saved successfully
     And check if the patient is already enrolled and proceed
     And get the orderID for the corresponding order
-    
-@accession  @covid 
- Scenario: Accession Creation
+
+  @covid @accession 
+  Scenario: Accession Creation
     Given the user is on the login page
     When the user enters username
     And the user enters password
@@ -45,13 +46,14 @@ Feature: Order creation functionality with mandatory fields
     Then the user should be logged in successfully for creating case
     When click on labsquire order
     And click on the order id
+   # Then the First Name is displayed with correct value
     And click on save accession
     And check if the patient is already enrolled and proceed
     And get the accession id after the order is converted into case
-    
-  @case @upload @covid
+
+  @covid @case @upload 
   Scenario: Uploading a Covid report after replacing accession ID
-  Given the user is on the login page
+    Given the user is on the login page
     When the user enters username
     And the user enters password
     And clicks the login button
@@ -62,30 +64,17 @@ Feature: Order creation functionality with mandatory fields
     And the user navigates to Covid case upload page
     And the user uploads the Covid report file
     Then the report should be uploaded successfully
-    
-    
- @case @covid @finalize
+
+  @covid @case  @finalize
   Scenario: Finalizing stage
     Given the user is on the login page
     When the user enters username
     And the user enters password
     And clicks the login button
     Then the user should be logged in successfully for creating case
-    When the user captures the latest Accession ID 
+    When the user captures the latest Accession ID
     And validate whether the accession ids are same after accession creation and after result file uploading
     And click mark for physician toggle
     And click on all cases
     Then validate whether the order id is mapped with the correct accession or not
     Then Validate whether the case is finalized or not
-
-   
-  #API validations
-    #Given the user has successfully created an order via UI and captured the Order ID
-    #When the user sends a GET request with that Order ID to fetch order details
-    #Then the API response should have status code 200
-    #And the API should return the same Order ID as submitted
-    #And the API should return correct patient information
-    #And the API should return correct order metadata including case type, facility, physician
-    #And the API should return the correct collection date
-    #And from API we need to get the labsquire order code  
-    

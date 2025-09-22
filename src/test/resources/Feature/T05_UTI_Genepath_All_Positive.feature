@@ -22,7 +22,7 @@ Feature: Order Creation with Uti positive value
     And the user selects the ordering facility
     And the user selects the ordering physician
     And the user selects the billing method
-    And the user enters the ICD-10 code in case
+    And the user enters the ICD-10 code
     And the user selects the specimen types
     And the user enters the collection date and time
     Then the case information should be saved successfully

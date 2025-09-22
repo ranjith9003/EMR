@@ -1,7 +1,7 @@
 @smoke
 Feature: Clinical Chemistry casetype End to End flow
 
-   @clinicalChemistry @order
+   @order
   Scenario: Order Creation
     Given the user is on the login page
     When the user enters username
@@ -25,18 +25,25 @@ Feature: Clinical Chemistry casetype End to End flow
     And the user enters the ICD-10 code
     And the user selects the specimen types
     And the user enters the collection date and time
-    And the user selects the fasting 
+    And the user selects the fasting
     Then the case information should be saved successfully
     When the user searches and selects the required test
-    When user selects the following tests:
-      | Albumin   |
-      | Glucose   |
-      | Bilirubin |
-    Then the selected tests should be marked as checked
-      | Albumin   |
-      | Glucose   |
-      | Bilirubin |
-    And the user clicks the add test button for covidflu
+    Then I select the following panels
+      | Food Allergens-30      |
+      | Inhalenat Allergens-36 |
+    Then the following panels should have correct tests
+      | Panel Name             |
+      | Food Allergens-30      |
+      | Inhalenat Allergens-36 |
+    #| Basic Metabolic Panel                  |
+    #| Comp Metabolic Panel                   |
+    #| Hepatic Profile                        |
+    #| Hepatitis                              |
+    #| Lipid Panel                            |
+    #| Renal Panel                            |
+    #| Food Allergens-30                      |
+    #| Inhalenat Allergens-36                 |
+    When the user clicks the add test button in clinical chemistry
     When the user opens the patient signature section
     And the user uploads or draws the patient signature
     And the user confirms and saves the signature

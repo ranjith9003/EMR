@@ -1,6 +1,8 @@
 package pageObjects;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -183,7 +185,7 @@ public class Locators {
     public WebElement icd_code_select;
     @FindBy(xpath = "//span[text()='COVID 19']")
     public WebElement covid_text;
-    @FindBy(xpath = "//span[text()=' ADD TESTS ']")
+    @FindBy(xpath = "//div[@class='add-test-button']//button[@type='button']")
     public WebElement add_test_button;
   //span[text()=' Add Test ']
     @FindBy(xpath = "//span[text()=' Add Test']")
@@ -193,13 +195,17 @@ public class Locators {
 
     @FindBy(xpath = "//label[@class='el-checkbox el-collapse-checkbox']")
     public WebElement add_test_checkbox;
-    @FindBy(xpath = "//span[text()='Uti With Sti']")
+    @FindBy(xpath = "//span[text()='UTI with STI']")
     public WebElement utiWithStd;
+//    @FindBy(xpath = "//span[text()='Uti With Sti']")
+//    public WebElement utiWithStd;
     @FindBy(xpath = "//span[text()='Uti Without Sti']")
     public WebElement utiWithoutStd;
+//    @FindBy(xpath = "//span[text()='UTI w/o STI']")
+//    public WebElement utiWithoutStd;
     @FindBy(xpath = "//span[text()='UTI Basic Panel']")
     public WebElement UTIBasicPanel;
-    @FindBy(xpath = "//div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/section[1]/ul[1]/li[2]/div[1]/div[1]/div[1]/div[1]/i[1]")
+    @FindBy(xpath = "//div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/section[1]/ul[1]/li[1]/div[1]/div[1]/div[1]/div[1]/i[1]")
     public WebElement add_test_checkbox_allTest;
     @FindBy(xpath = "//div[1]/div[1]/section[1]/ul[1]/li[2]/div[1]/div[1]/div[2]/div[1]/div[1]/label[1]/span[1]/span[1]")
     public WebElement BMP_all;
@@ -208,6 +214,8 @@ public class Locators {
   //ul[@class="selected-tests-list"]//li//span
     @FindBy(xpath = "//ul[@class='selected-tests-list']//li//span")
     public WebElement After_select_test_BMP;
+    
+    
   //*[@id="el-collapse-content-6235"]/div[1]/div[2]/div
     @FindBy(xpath = "//*[@id='el-collapse-content-189']/div[1]/div[2]")
     		
@@ -290,7 +298,75 @@ public class Locators {
 
     @FindBy(xpath = "//span[text()='Submit']")
     public WebElement submit;
+    public Map<String, WebElement> panelsMap = new HashMap<>();
 
+ // Initialize map
+ public void initPanelsMap() {
+     panelsMap.put("All Tests", allTestsPanelCheckbox);
+     panelsMap.put("Basic Metabolic Panel",  basicMetabolicPanelCheckbox);
+     panelsMap.put("Comp Metabolic Panel",  compMetabolicPanelCheckbox);
+     panelsMap.put("Hepatic Profile",  hepaticProfilePanelCheckbox);
+     panelsMap.put("Hepatitis", hepatitisPanelCheckbox);
+     panelsMap.put("Lipid Panel", lipidPanelCheckbox);
+     panelsMap.put("Other Tests", otherTestsPanelCheckbox);
+     panelsMap.put("Quarterly annual Wellness panel Female", quarterlyWellnessFemalePanelCheckbox);
+     panelsMap.put("Quarterly annual Wellness panel Male",  quarterlyWellnessMalePanelCheckbox);
+     panelsMap.put("Renal Panel", renalPanelCheckbox);
+     panelsMap.put("Semi annual Wellness panel Female", semiAnnualWellnessFemalePanelCheckbox);
+     panelsMap.put("Semi annual Wellness panel Male",  semiAnnualWellnessMalePanelCheckbox);
+     panelsMap.put("Send Outs",  sendOutsPanelCheckbox);
+     panelsMap.put("Food Allergens-30",  foodAllergens30PanelCheckbox);
+     panelsMap.put("Inhalenat Allergens-36", inhalenatAllergens36PanelCheckbox);
+ }
+    @FindBy(xpath = "//div[@class='el-collapse-item__header' and .//text()[contains(., 'All Tests')]]//label")
+    public WebElement allTestsPanelCheckbox;
+
+    @FindBy(xpath = "//div[@class='el-collapse-item__header' and .//text()[contains(., 'Basic Metabolic Panel')]]//label")
+    public WebElement basicMetabolicPanelCheckbox;
+
+    @FindBy(xpath = "//div[@class='el-collapse-item__header' and .//text()[contains(., 'Comp Metabolic Panel')]]//label")
+    public WebElement compMetabolicPanelCheckbox;
+
+    @FindBy(xpath = "//div[@class='el-collapse-item__header' and .//text()[contains(., 'Hepatic Profile')]]//label")
+    public WebElement hepaticProfilePanelCheckbox;
+
+    @FindBy(xpath = "//div[@class='el-collapse-item__header' and .//text()[contains(., 'Hepatitis')]]//label")
+    public WebElement hepatitisPanelCheckbox;
+
+    @FindBy(xpath = "//div[@class='el-collapse-item__header' and .//text()[contains(., 'Lipid Panel')]]//label")
+    public WebElement lipidPanelCheckbox;
+
+    @FindBy(xpath = "//div[@class='el-collapse-item__header' and .//text()[contains(., 'Other Tests')]]//label")
+    public WebElement otherTestsPanelCheckbox;
+
+    @FindBy(xpath = "//div[@class='el-collapse-item__header' and .//text()[contains(., 'Quarterly annual Wellness panel Female')]]//label")
+    public WebElement quarterlyWellnessFemalePanelCheckbox;
+
+    @FindBy(xpath = "//div[@class='el-collapse-item__header' and .//text()[contains(., 'Quarterly annual Wellness panel Male')]]//label")
+    public WebElement quarterlyWellnessMalePanelCheckbox;
+
+    @FindBy(xpath = "//div[@class='el-collapse-item__header' and .//text()[contains(., 'Renal Panel')]]//label")
+    public WebElement renalPanelCheckbox;
+
+    @FindBy(xpath = "//div[@class='el-collapse-item__header' and .//text()[contains(., 'Semi annual Wellness panel Female')]]//label")
+    public WebElement semiAnnualWellnessFemalePanelCheckbox;
+
+    @FindBy(xpath = "//div[@class='el-collapse-item__header' and .//text()[contains(., 'Semi annual Wellness panel Male')]]//label")
+    public WebElement semiAnnualWellnessMalePanelCheckbox;
+
+    @FindBy(xpath = "//div[@class='el-collapse-item__header' and .//text()[contains(., 'Send Outs')]]//label")
+    public WebElement sendOutsPanelCheckbox;
+
+    @FindBy(xpath = "//div[@class='el-collapse-item__header' and .//text()[contains(., 'Food Allergens-30')]]//label")
+    public WebElement foodAllergens30PanelCheckbox;
+
+    @FindBy(xpath = "//div[@class='el-collapse-item__header' and .//text()[contains(., 'Inhalenat Allergens-36')]]//label")
+    public WebElement inhalenatAllergens36PanelCheckbox;
+    
+    // 2️⃣ Map to hold panel name → WebElement
+
+    // 3️⃣ Constructor
+   
     @FindBy(xpath = "//*[@id='all-cases-listings']/div/div[5]/div[2]/table/tbody/tr[1]/td[13]/div/ul/li//button[@title='View Case']")
     public WebElement view_case;
 
@@ -341,13 +417,19 @@ public class Locators {
 
     @FindBy(xpath = "//span[text()='Start Resulting']")
     public WebElement start_resulting;
-
+    @FindBy(xpath = "//span[text()='GENERATE PRILIMINARY REPORT']")
+    public WebElement preliminary_report_clinicalchemistry;
     @FindBy(xpath = "//input[@placeholder='Enter value']")
     public List<WebElement> allInputs;
-
+  
+    @FindBy(xpath = "//div[@class='physician-btn']//div[@class='el-switch__action']")
+    public WebElement mark_for_physician_clinicalchemistry;
     @FindBy(xpath = "//span[@class='custom-select-capitalize']//div[@class='el-select__tags']")
     public WebElement specimen_types;
-
+  
+    
+    @FindBy(xpath = "//p[@class='tube-name']")
+    public WebElement tube_name;
     @FindBy(xpath = "//span[text()='Urine']")
     public WebElement particular_specimen_type;
 
@@ -1223,29 +1305,115 @@ public class Locators {
    public WebElement practiceFusion_next_send;
    @FindBy(xpath = "//button[@data-element='print-btn']")
    public WebElement practiceFusion_print_button;
-//   @FindBy(xpath = "")
-//   public WebElement practiceFusion_;
-//   @FindBy(xpath = "")
-//   public WebElement practiceFusion_;
-//   @FindBy(xpath = "")
-//   public WebElement practiceFusion_;
-//   @FindBy(xpath = "")
-//   public WebElement practiceFusion_;
-//   @FindBy(xpath = "")
-//   public WebElement practiceFusion_;
-//   @FindBy(xpath = "")
-//   public WebElement practiceFusion_;
-//   @FindBy(xpath = "")
-//   public WebElement practiceFusion_;
-//   @FindBy(xpath = "")
-//   public WebElement practiceFusion_;
-//   @FindBy(xpath = "")
-//   public WebElement practiceFusion_;
+   @FindBy(xpath = "//h4[text()='First Name']/following-sibling::p")
+   public WebElement first_name_verification;
+   @FindBy(xpath = "//h4[text()='Middle Name']/following-sibling::p")
+   public WebElement Middle_name_verification;
+   @FindBy(xpath = "//h4[text()='Last Name']/following-sibling::p")
+   public WebElement last_name_verification;
+   @FindBy(xpath = "//h4[text()='Date of Birth']/following-sibling::p")
+   public WebElement date_of_birth_verification;
+   @FindBy(xpath = "//h4[text()='EMR']/following-sibling::p")
+   public WebElement emr_verification;
+   @FindBy(xpath = "//h4[text()='Mobile Number']/following-sibling::p")
+   public WebElement mobile_number_verification;
+   @FindBy(xpath = "//h4[text()='Phone Number']/following-sibling::p")
+   public WebElement phone_number_verification;
+   @FindBy(xpath = "//h4[text()='Email']/following-sibling::p")
+   public WebElement email_verification;
+   @FindBy(xpath = "//h4[text()='Address Line 1']/following-sibling::p")
+   public WebElement address_line_1_verification;
+ @FindBy(xpath = "//h4[text()='Address Line 2']/following-sibling::p")
+ public WebElement address_line_2_verification;
+ @FindBy(xpath = "//h4[text()='County']/following-sibling::p")
+ public WebElement county_verification;
+ @FindBy(xpath = "//h4[text()='Zip']/following-sibling::p")
+ public WebElement zip_verification;
+ @FindBy(xpath = "//h4[text()='State']/following-sibling::p")
+ public WebElement state_verification;
+ @FindBy(xpath = "//h4[text()='City']/following-sibling::p")
+ public WebElement city_verification;
+ @FindBy(xpath = "//h4[text()='Race']/following-sibling::p")
+ public WebElement race_verification;
+ @FindBy(xpath = "//h4[text()='Ethnicity']/following-sibling::p")
+ public WebElement ethnicity_verification;
+ @FindBy(xpath = "//h4[text()='Medical Record Id']/following-sibling::p")
+ public WebElement medical_record_id_verification;
+ @FindBy(xpath = "//h4[text()='Case Type']/following-sibling::ul/li")
+ public WebElement case_type_verification;
+ @FindBy(xpath = "//h4[text()='STAT Case']/following-sibling::p")
+ public WebElement stat_case_verification;
+ @FindBy(xpath = "//h4[text()='Order Date']/following-sibling::p")
+ public WebElement order_date_verification;
+ @FindBy(xpath = "//h4[text()='Ordering Facility']/following-sibling::p")
+ public WebElement ordering_facility_verification;
+ @FindBy(xpath = "//h4[text()='Ordering Facility Branch']/following-sibling::p")
+ public WebElement ordering_facility_branch_verification;
+ @FindBy(xpath = "//h4[text()='Ordering Physician']/following-sibling::p")
+ public WebElement ordering_physician_verification;
+ @FindBy(xpath = "//h4[text()='Referring Physician']/following-sibling::p")
+ public WebElement referring_physician_verification;
+ @FindBy(xpath = "//h4[text()='Bill To']/following-sibling::p")
+ public WebElement bill_to_verification;
+ @FindBy(xpath = "//h4[text()='Order ID']/following-sibling::p")
+ public WebElement order_id_verification;
+ @FindBy(xpath = "//h4[text()='ICD-10 (Indicative)']/following-sibling::ul/li")
+ public WebElement icd_10_verification;
+ @FindBy(xpath = "//h4[text()='Collection Date']/following-sibling::p")
+ public WebElement collection_date_verification;
+ @FindBy(xpath = "//h4[text()='Temperature']/following-sibling::p")
+ public WebElement temperature_verification;
+ @FindBy(xpath = "//h4[text()='Specimen Types']/following-sibling::ul/li")
+ public WebElement specimen_types_verification;
+ @FindBy(xpath = "//h4[text()='Relationship']/following-sibling::p")
+ public WebElement relationship_verification;
+ @FindBy(xpath = "//h4[text()='Plan Type']/following-sibling::span")
+ public WebElement plan_type_verification;
+ @FindBy(xpath = "//h4[text()='First Name']/following-sibling::span")
+ public WebElement first_name_Insurance_verification;
+ @FindBy(xpath = "//h4[text()='Middle Name']/following-sibling::span")
+ public WebElement middle_name_Insurance_verification;
+ @FindBy(xpath = "//h4[text()='Last Name']/following-sibling::span")
+ public WebElement last_name_Insurance_verification;
+ @FindBy(xpath = "//h4[text()='Gender']/following-sibling::span")
+ public WebElement gender_Insurance_verification;
+ @FindBy(xpath = "//h4[text()='Date of Birth']/following-sibling::span")
+ public WebElement date_of_birth_Insurance_verification;
+ @FindBy(xpath = "//h4[text()='Insurance Name']/following-sibling::span")
+ public WebElement data_of_birth_Insurance_verification;
+ @FindBy(xpath = "//h4[text()='Insurance Carrier Code']/following-sibling::span")
+ public WebElement insurance_carrier_code_verification;
+ @FindBy(xpath = "//h4[text()='Policy No']/following-sibling::span")
+ public WebElement policy_no_verification;
+ @FindBy(xpath = "//h4[text()='Group#']/following-sibling::span")
+ public WebElement group_no_verification;
+ @FindBy(xpath = "//h4[text()='Address Line 1']/following-sibling::span")
+ public WebElement address_line_1_Insurance_verification;
+ @FindBy(xpath = "//h4[text()='Address Line 2']/following-sibling::span")
+ public WebElement address_line_2_Insurance_verification;
+ @FindBy(xpath = "//h4[text()='Zip']/following-sibling::span")
+ public WebElement zip_Insurance_verification;
+ @FindBy(xpath = "//h4[text()='State']/following-sibling::span")
+ public WebElement state_Insurance_verification;
+ @FindBy(xpath = "//h4[text()='City']/following-sibling::span")
+ public WebElement city_Insurance_verification;
+ @FindBy(xpath = "//label[contains(normalize-space(),'Collection Date & Time')]/following::input[1]")
+ public WebElement collection_date_time_creation;
+// @FindBy(xpath = "")
+// public WebElement ;
+// @FindBy(xpath = "")
+// public WebElement ;
+// @FindBy(xpath = "")
+// public WebElement ;
+// @FindBy(xpath = "")
+// public WebElement ;
  //a[text()='Devansh Lab Werks - HILLSPC']
     // Constructor to initialize PageFactory
     public Locators(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        initPanelsMap(); // populate the map immediately
+
     }
 }
 //div[1]/section[1]/div[1]/div[2]/div[1]/div[1]/div[4]/div[2]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/span[1]

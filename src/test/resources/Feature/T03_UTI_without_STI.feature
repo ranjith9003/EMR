@@ -1,7 +1,7 @@
 @smoke
 Feature: Order Creation with Uti Without STI
 
-    @UTIorder
+  @UTIorder  
   Scenario: Order Creation 
     Given the user is on the login page of DLW
     When the user enters username
@@ -22,7 +22,7 @@ Feature: Order Creation with Uti Without STI
     And the user selects the ordering facility
     And the user selects the ordering physician
     And the user selects the billing method
-    And the user enters the ICD-10 code in case
+    And the user enters the ICD-10 code
     And the user selects the specimen types
     And the user enters the collection date and time
     Then the case information should be saved successfully
@@ -39,7 +39,7 @@ Feature: Order Creation with Uti Without STI
     And check if the case is already created and proceed
     And get the orderID for the corresponding order
     
-@UTIorder @accession @case    
+@UTIorder  @accession @case    
 Scenario: Accession Creation
     Given the user is on the login page
     When the user enters username
@@ -52,7 +52,7 @@ Scenario: Accession Creation
     And check if the patient is already enrolled and proceed
     And click on convert to  case
     And get the accession id after the order is converted into case
-@UTIorder @upload @case 
+ @UTIorder @upload @case 
   Scenario: Uploading  UTI report after replacing accession ID
   Given the user is on the login page
     When the user enters username

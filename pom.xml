@@ -53,7 +53,18 @@
             <version>5.7.0</version>
             <scope>test</scope>
         </dependency>
-
+  <!-- Healenium self-healing driver -->
+    <dependency>
+        <groupId>com.epam.healenium</groupId>
+        <artifactId>healenium-web</artifactId>
+        <version>3.5.6</version> <!-- Latest as of 2025 -->
+    </dependency>
+    <!-- Jsoup for DOM parsing -->
+    <dependency>
+        <groupId>org.jsoup</groupId>
+        <artifactId>jsoup</artifactId>
+        <version>1.17.2</version>
+    </dependency>
         <!-- JUnit -->
         <dependency>
             <groupId>junit</groupId>
@@ -77,6 +88,11 @@
             <version>5.1.1</version>
             <scope>test</scope>
         </dependency>
+<dependency>
+    <groupId>org.apache.pdfbox</groupId>
+    <artifactId>pdfbox</artifactId>
+    <version>2.0.30</version>
+</dependency>
 
         <!-- Apache POI -->
         <dependency>

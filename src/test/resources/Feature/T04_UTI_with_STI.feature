@@ -1,7 +1,7 @@
 @smoke
 Feature: Order Creation with Uti With STI
 
-  @UTIorder    
+      
   Scenario: Order Creation 
     Given the user is on the login page of DLW
     When the user enters username
@@ -39,7 +39,7 @@ Feature: Order Creation with Uti With STI
     And check if the case is already created and proceed
     And get the orderID for the corresponding order
     
-@UTIorder @accession  @case  
+ @accession  @case  
 Scenario: Accession Creation
     Given the user is on the login page
     When the user enters username
@@ -53,7 +53,7 @@ Scenario: Accession Creation
     And click on convert to  case
     And get the accession id after the order is converted into case
  
-@UTIorder @upload   @case 
+ @upload   @case 
   Scenario: Uploading a UTI report after replacing accession ID
   Given the user is on the login page
     When the user enters username
@@ -67,7 +67,7 @@ Scenario: Accession Creation
     And the user uploads the UTI report file
     Then the UTI report should be uploaded successfully
     
-  @UTIorder  @finalize @case
+    @finalize @case
   Scenario: Finalizing stage
     Given the user is on the login page
     When the user enters username

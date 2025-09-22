@@ -2,6 +2,7 @@
 
 package StepDefinition;
 
+import java.time.Duration;
 import java.util.Map;
 
 import io.cucumber.java.en.Given;
@@ -247,18 +248,25 @@ public class OrderCreation extends BaseSteps {
     	    } catch (Exception e) {
     	        System.err.println("⚠️ Exception during enrollment check: " + e.getMessage());
     	    }
+
         // BaseClass.assertElementTextContainsWithRetry(LocatorsPage.success_message,"New Order Created Successfully", 10);
     	 Thread.sleep(4000);
 
     	  
     }
     @When("get the orderID for the corresponding order")
-    public void get_the_order_id_for_the_corresponding_order()throws Throwable {
-    	  String orderId=   BaseClass.getTextSafe(LocatorsPage.order_id, 10, 10);
-    	  System.out.println("Order ID: " + orderId);
-    	  ScenarioContext.orderId = orderId;
-    	
+    public void get_the_order_id_for_the_corresponding_order() throws Throwable{
+    	 //BaseClass.waitAndClickWithJSFallback(LocatorsPage.labsquire_order, 10);
+         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+         
+    	 Thread.sleep(20000);
+    	 BaseClass.waitForPageLoadComplete(Duration.ofSeconds(20));
+    	 String orderId= BaseClass.getTextSafe(LocatorsPage.order_id, 10, 10); 
+    	System.out.println("Order ID: " + orderId);
+    	 ScenarioContext.orderId = orderId; 
     }
+
+
     @When("the user enters the secondary Insurance")
     public void the_user_enters_the_secondary_insurance() {
 		BaseClass.waitAndClick(LocatorsPage.secondary_insurance, 10);

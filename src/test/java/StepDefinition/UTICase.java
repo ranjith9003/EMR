@@ -17,7 +17,7 @@ public class UTICase extends BaseSteps {
 	public void the_user_searches_and_selects_the_uti_test_without_std_atila_panels() throws Throwable {
 		BaseClass.waitAndClick(LocatorsPage.add_test, 10);
 		BaseClass.waitAndClick(LocatorsPage.select_panels, 10);
-		BaseClass.waitAndClick(LocatorsPage.UTIBasicPanel, 10);
+		BaseClass.waitAndClick(LocatorsPage.utiWithoutStd, 10);
 		Thread.sleep(3000);
 
 
@@ -26,8 +26,9 @@ public class UTICase extends BaseSteps {
 	}
 	@When("the user clicks the add test button to add")
 	public void the_user_clicks_the_add_test_button_to_add() {
-	    
-		BaseClass.waitAndClickWithJSFallback(LocatorsPage.add_test_button_new, 10);
+		//BaseClass.waitAndClickWithRetries(LocatorsPage.add_test_button, 10, 10);
+
+		BaseClass.waitAndClickWithJSFallback(LocatorsPage.add_test_button, 10);
         BaseClass.scrollByPixels(0, 1100);
 
 		
